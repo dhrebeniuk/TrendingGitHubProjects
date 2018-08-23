@@ -12,5 +12,6 @@ target "TrendingGitHubProjects" do
 	pod 'ReactiveCocoa', '~> 8.0.0'
 	pod 'Swinject', '~> 2.4.1'
     pod 'SwinjectStoryboard', '~> 2.0.2'
+    pod 'SegueWithCompletion', '~> 0.1.6'
 
 end

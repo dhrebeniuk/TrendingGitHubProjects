@@ -8,8 +8,10 @@
 
 import Foundation
 
-protocol GitHubTrendsView {
+protocol GitHubTrendsView: CoordinatorView {
     func blockUI()
     
     func unblockUI()
+    
+    func show(errorMessage: String)
 }

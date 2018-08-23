@@ -8,6 +8,7 @@ PODS:
   - ReactiveSwift (4.0.0):
     - Result (~> 4.0)
   - Result (4.0.0)
+  - SegueWithCompletion (0.1.6)
   - Swinject (2.4.1)
   - SwinjectStoryboard (2.0.2):
     - Swinject (~> 2.4)
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.1)
   - ReactiveCocoa (~> 8.0.0)
   - ReactiveSwift (~> 4.0.0)
+  - SegueWithCompletion (~> 0.1.6)
   - Swinject (~> 2.4.1)
   - SwinjectStoryboard (~> 2.0.2)
 
@@ -29,6 +31,7 @@ SPEC REPOS:
     - ReactiveCocoa
     - ReactiveSwift
     - Result
+    - SegueWithCompletion
     - Swinject
     - SwinjectStoryboard
 
@@ -39,9 +42,10 @@ SPEC CHECKSUMS:
   ReactiveCocoa: 87cb64d78424d749a0bbfd9b07e4825e8d834066
   ReactiveSwift: a2bb9ace428a109e9c0209615645d9d286c8c433
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
+  SegueWithCompletion: e18763a8c4b99e18fa9b0e2239b8fd71e7d52c5a
   Swinject: f7f15a9672e99328c1f07f277091087917215700
   SwinjectStoryboard: 365698aec11b57c6b14a3c1f52d0308759d377bf
 
-PODFILE CHECKSUM: 813b55f65cfa77404e71dc3ed1c77798f352dced
+PODFILE CHECKSUM: 58443f102391328dd72ea3cd9817b74da0fc7cca
 
 COCOAPODS: 1.5.3

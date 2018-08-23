@@ -11,24 +11,31 @@ import ReactiveSwift
 
 class GitHubTrendsViewModel {
 
-    private let gitHubClient: GitHubClient
-
-    init(client: GitHubClient) {
-        gitHubClient = client
+    private let client: GitHubClient
+    private let coordinator: GitHubTrendsCoordinatorInput
+    
+    init(client: GitHubClient, coordinator: GitHubTrendsCoordinatorInput) {
+        self.client = client
+        self.coordinator = coordinator
     }
     
     private(set) var repositories = MutableProperty<[JSONGitRepository]>([])
 
     func loadRepositories() {
-        gitHubClient.createTrendingRepositoriesSignalProducer().start { [weak self] in
-            switch $0 {
-            case .value(let resitories):
-                self?.repositories.value = resitories
-            case .failed(_):
-                break
-            default:
-                break
-            }
+        coordinator.blockUI()
+        
+        client.createTrendingRepositoriesSignalProducer()
+            .observe(on: QueueScheduler.main)
+            .start { [weak self] in
+                self?.coordinator.unblockUI()
+                switch $0 {
+                case .value(let resitories):
+                    self?.repositories.value = resitories
+                case .failed(let error):
+                    self?.coordinator.show(errorMessage: error.localizedDescription)
+                default:
+                    break
+                }
         }
     }
     

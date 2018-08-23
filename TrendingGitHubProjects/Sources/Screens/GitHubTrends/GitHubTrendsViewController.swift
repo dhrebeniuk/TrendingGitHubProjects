@@ -22,8 +22,9 @@ class GitHubTrendsViewController: UITableViewController {
         super.viewDidLoad()
         
         viewModel.repositories.producer
-            .observe(on: QueueScheduler.main)
             .startWithValues() { [weak self] repositories in
+                self?.refreshControl?.attributedTitle = nil
+                
                 let dataSourceAdapter = TableDataSourceAdapter<UITableViewCell, JSONGitRepository>(identifier: GitHubTrendsViewController.projectCellIdentifier, objects: repositories) { (cell, repository) in
                     cell.textLabel?.text = repository.name
                 }
@@ -48,6 +49,12 @@ extension GitHubTrendsViewController: GitHubTrendsView {
     
     func unblockUI() {
         refreshControl?.endRefreshing()
+    }
+    
+    func show(errorMessage: String) {
+        refreshControl?.attributedTitle = NSAttributedString(string: NSLocalizedString("Error", comment: ""))
+        
+        show(errorAlert: errorMessage)
     }
     
 }

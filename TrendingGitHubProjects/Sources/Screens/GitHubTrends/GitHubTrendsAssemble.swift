@@ -16,11 +16,19 @@ class GitHubTrendsAssemble: Assemble {
         
         container.register(GitHubTrendsViewModel.self) { resolver in
             let client = resolver.resolve(GitHubClient.self)!
-            let viewModel = GitHubTrendsViewModel(client: client)
+            let coordinator = resolver.resolve(GitHubTrendsCoordinator.self)!
+            let viewModel = GitHubTrendsViewModel(client: client, coordinator: coordinator)
             return viewModel
         }
+    
+        container.register(GitHubTrendsCoordinator.self) { resolver in
+            return GitHubTrendsCoordinator()
+        }.inObjectScope(.container)
         
         container.storyboardInitCompleted(GitHubTrendsViewController.self) { resolver, controller in
+            let coordinator = resolver.resolve(GitHubTrendsCoordinator.self)!
+            coordinator.view = controller
+
             let viewModel = resolver.resolve(GitHubTrendsViewModel.self)!
             controller.viewModel = viewModel
         }
