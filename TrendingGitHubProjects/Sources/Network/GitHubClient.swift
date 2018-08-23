@@ -25,16 +25,20 @@ class GitHubClient {
 extension GitHubClient {
     
     func createTrendingRepositoriesSignalProducer() -> SignalProducer<[JSONGitRepository], GitHubError> {
-        let repositoriesURL = self.webAPIURL.appendingPathComponent("repositories")
+        
+        let repositoriesURL = self.webAPIURL.appendingPathComponent("search")
+            .appendingPathComponent("repositories")
+        
+        let parameters = ["q": "any"] as [String: Any]
         
         return SignalProducer<[JSONGitRepository], GitHubError> { observer, arg  in
-            Alamofire.request(repositoriesURL, method: .get, parameters: [:]).responseData { (response) in
+            Alamofire.request(repositoriesURL, method: .get, parameters: parameters).responseData { (response) in
                 switch response.result {
                 case .success(let jsonData):
                     let decoder = JSONDecoder()
                     do {
-                        let repositories = try decoder.decode([JSONGitRepository].self, from: jsonData)
-                        observer.send(value: repositories)
+                        let repositoriesResult = try decoder.decode(JSONGitRepositoriesResult.self, from: jsonData)
+                        observer.send(value: repositoriesResult.items)
                     }
                     catch {
                         observer.send(error: GitHubError.jsonFail(error))

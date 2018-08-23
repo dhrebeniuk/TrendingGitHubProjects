@@ -9,10 +9,6 @@
 import Foundation
 
 struct JSONGitRepositoryOwner: Decodable {
-    let id: Int
     let login: String
-    let node_id: String
-    let avatar_url: String
-    let html_url: String
-    let type: String
+    let avatar_url: String?
 }

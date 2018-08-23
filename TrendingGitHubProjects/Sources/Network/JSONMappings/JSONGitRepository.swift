@@ -10,10 +10,11 @@ import Foundation
 
 struct JSONGitRepository: Decodable {
 
-    let id: Int
-    let node_id: String
-    let name: String
     let full_name: String
+    
+    let stargazers_count: Int
+    let forks_count: Int
+    
     let description: String?
     
     let owner: JSONGitRepositoryOwner

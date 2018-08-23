@@ -26,7 +26,7 @@ class GitHubTrendsViewController: UITableViewController {
                 self?.refreshControl?.attributedTitle = nil
                 
                 let dataSourceAdapter = TableDataSourceAdapter<UITableViewCell, JSONGitRepository>(identifier: GitHubTrendsViewController.projectCellIdentifier, objects: repositories) { (cell, repository) in
-                    cell.textLabel?.text = repository.name
+                    cell.textLabel?.text = repository.full_name
                 }
                 self?.dataSourceAdapter = dataSourceAdapter
                 self?.tableView.dataSource = dataSourceAdapter
