@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,13 +19,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="projectCellIdentifier" id="VQs-0d-oMp">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="projectCellIdentifier" rowHeight="101" id="VQs-0d-oMp" customClass="GitHubTrendsCell" customModule="TrendingGitHubProjects" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="101"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VQs-0d-oMp" id="exm-2s-SIY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Project Name}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Feq-PC-FrL">
+                                            <rect key="frame" x="16" y="11" width="343" height="23"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Project stars count}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCQ-wv-gmS">
+                                            <rect key="frame" x="16" y="42" width="343" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Project description}" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xja-yB-Ffa">
+                                            <rect key="frame" x="16" y="70" width="343" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mCQ-wv-gmS" firstAttribute="leading" secondItem="exm-2s-SIY" secondAttribute="leadingMargin" id="58z-00-ccS"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Feq-PC-FrL" secondAttribute="trailing" id="Dqx-FM-R7Z"/>
+                                        <constraint firstItem="Xja-yB-Ffa" firstAttribute="trailing" secondItem="exm-2s-SIY" secondAttribute="trailingMargin" id="Epm-N1-1at"/>
+                                        <constraint firstItem="mCQ-wv-gmS" firstAttribute="top" secondItem="Feq-PC-FrL" secondAttribute="bottom" constant="8" id="Qkg-PU-3Y2"/>
+                                        <constraint firstItem="Xja-yB-Ffa" firstAttribute="top" secondItem="mCQ-wv-gmS" secondAttribute="bottom" constant="8" id="Uvq-ai-YWV"/>
+                                        <constraint firstItem="Feq-PC-FrL" firstAttribute="leading" secondItem="exm-2s-SIY" secondAttribute="leadingMargin" id="f4S-gW-vGJ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Xja-yB-Ffa" secondAttribute="bottom" id="fKw-e0-aHH"/>
+                                        <constraint firstItem="mCQ-wv-gmS" firstAttribute="trailing" secondItem="exm-2s-SIY" secondAttribute="trailingMargin" id="oYe-Cm-ay4"/>
+                                        <constraint firstItem="Xja-yB-Ffa" firstAttribute="leading" secondItem="exm-2s-SIY" secondAttribute="leadingMargin" id="r69-Ke-Oca"/>
+                                        <constraint firstItem="Feq-PC-FrL" firstAttribute="top" secondItem="exm-2s-SIY" secondAttribute="topMargin" id="t5Z-QG-VXm"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="projectDescriptionLabel" destination="Xja-yB-Ffa" id="CJr-2q-FNb"/>
+                                    <outlet property="projectNameLabel" destination="Feq-PC-FrL" id="Guf-nZ-OJ8"/>
+                                    <outlet property="projectStarsCountLabel" destination="mCQ-wv-gmS" id="WKt-3f-CWn"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -42,7 +80,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mF-lv-cWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695" y="318"/>
+            <point key="canvasLocation" x="693.60000000000002" y="317.99100449775113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LEO-wp-EF6">

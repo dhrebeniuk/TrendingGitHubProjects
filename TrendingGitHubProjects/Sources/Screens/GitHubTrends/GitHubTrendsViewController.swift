@@ -16,17 +16,23 @@ class GitHubTrendsViewController: UITableViewController {
     
     private static let projectCellIdentifier = "projectCellIdentifier"
     
-    private var dataSourceAdapter: TableDataSourceAdapter<UITableViewCell, JSONGitRepository>?
+    private var dataSourceAdapter: TableDataSourceAdapter<GitHubTrendsCell, JSONGitRepository>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         viewModel.repositories.producer
             .startWithValues() { [weak self] repositories in
                 self?.refreshControl?.attributedTitle = nil
                 
-                let dataSourceAdapter = TableDataSourceAdapter<UITableViewCell, JSONGitRepository>(identifier: GitHubTrendsViewController.projectCellIdentifier, objects: repositories) { (cell, repository) in
-                    cell.textLabel?.text = repository.full_name
+                let dataSourceAdapter = TableDataSourceAdapter<GitHubTrendsCell, JSONGitRepository>(identifier: GitHubTrendsViewController.projectCellIdentifier, objects: repositories) { (cell, repository) in
+                    
+                    cell.projectNameLabel?.text = repository.full_name
+                    cell.projectStarsCountLabel?.text = "\(repository.forks_count)"
+                    cell.projectDescriptionLabel?.text = repository.description ?? ""
                 }
                 self?.dataSourceAdapter = dataSourceAdapter
                 self?.tableView.dataSource = dataSourceAdapter
