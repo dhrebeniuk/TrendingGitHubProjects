@@ -29,7 +29,7 @@ extension GitHubClient {
         let repositoriesURL = self.webAPIURL.appendingPathComponent("search")
             .appendingPathComponent("repositories")
         
-        let parameters = ["q": "any"] as [String: Any]
+        let parameters = ["q": "any", "sort": "stars", "order": "desc"] as [String: Any]
         
         return SignalProducer<[JSONGitRepository], GitHubError> { observer, arg  in
             Alamofire.request(repositoriesURL, method: .get, parameters: parameters).responseData { (response) in
