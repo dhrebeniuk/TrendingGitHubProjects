@@ -8,6 +8,7 @@
 
 import Foundation
 import ReactiveSwift
+import Kingfisher
 
 class GitHubRepositoryViewModel {
     
@@ -22,6 +23,7 @@ class GitHubRepositoryViewModel {
     private(set) var projectTitle = MutableProperty<String>("")
     private(set) var userName = MutableProperty<String>("")
     private(set) var repositoryDescription = MutableProperty<String>("")
+    private(set) var ownerAvatarResource = MutableProperty<Resource?>(nil)
 
     func loadRepository() {
         client.createRepositoryDetailsSignalProducer(repositoryId: repositoryId)
@@ -32,6 +34,9 @@ class GitHubRepositoryViewModel {
                     self?.projectTitle.value = repository.name
                     self?.userName.value = repository.owner.login
                     self?.repositoryDescription.value = repository.description ?? ""
+                    self?.ownerAvatarResource.value = repository.owner.avatar_url.flatMap { urlString -> Resource? in
+                        URL(string: urlString)
+                    }
                 case .failed(_):
                     break
                 default:

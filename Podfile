@@ -7,6 +7,7 @@ target "TrendingGitHubProjects" do
 
 	pod 'Alamofire', '~> 4.7.2'
     pod 'AlamofireNetworkActivityIndicator', '~> 2.2.1'
+    pod 'Kingfisher', '~> 4.8.1'
 	pod 'MBProgressHUD', '~> 1.1'
 	pod 'ReactiveSwift', '~> 4.0.0'
 	pod 'ReactiveCocoa', '~> 8.0.0'

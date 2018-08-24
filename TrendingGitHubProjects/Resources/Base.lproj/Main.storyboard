@@ -100,12 +100,17 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZi-Hs-yEI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AvatarImageView" translatesAutoresizingMaskIntoConstraints="NO" id="SoA-lm-zBP">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SoA-lm-zBP" customClass="AvatarImageView" customModule="TrendingGitHubProjects" customModuleProvider="target">
                                         <rect key="frame" x="137" y="24" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="81K-ne-0dI"/>
                                             <constraint firstAttribute="height" constant="100" id="TPD-Vx-olq"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="corderRadius">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{UserName}" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVu-qv-IBY">
                                         <rect key="frame" x="124" y="148" width="127" height="27"/>
@@ -130,25 +135,25 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZHg-nb-6L5">
-                                        <rect key="frame" x="0.0" y="275" width="375" height="328"/>
+                                        <rect key="frame" x="0.0" y="268" width="375" height="335"/>
                                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" priority="750" constant="328" id="rws-KA-ZA6"/>
+                                            <constraint firstAttribute="height" priority="750" constant="335" id="rws-KA-ZA6"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBQ-3P-wqP" customClass="RoundedView" customModule="TrendingGitHubProjects" customModuleProvider="target">
-                                        <rect key="frame" x="68" y="245" width="240" height="60"/>
+                                        <rect key="frame" x="68" y="245" width="240" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="88S-9T-Tgp"/>
-                                            <constraint firstAttribute="height" constant="60" id="vnC-Mp-OJf"/>
+                                            <constraint firstAttribute="height" constant="50" id="vnC-Mp-OJf"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="corderRadius">
                                                 <real key="value" value="12"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
+                                                <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.78823529411764703" green="0.82745098039215681" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -165,7 +170,7 @@
                                     <constraint firstItem="SoA-lm-zBP" firstAttribute="top" secondItem="gZi-Hs-yEI" secondAttribute="top" constant="24" id="LG2-Jc-OHo"/>
                                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="SHo-xT-rVk" secondAttribute="trailing" id="Lfv-tF-ymo"/>
                                     <constraint firstItem="ZHg-nb-6L5" firstAttribute="centerX" secondItem="gZi-Hs-yEI" secondAttribute="centerX" id="PJ6-Yq-XuL"/>
-                                    <constraint firstItem="ZHg-nb-6L5" firstAttribute="top" secondItem="SHo-xT-rVk" secondAttribute="bottom" constant="46" id="RNI-Cl-czh"/>
+                                    <constraint firstItem="ZHg-nb-6L5" firstAttribute="top" secondItem="SHo-xT-rVk" secondAttribute="bottom" constant="39" id="RNI-Cl-czh"/>
                                     <constraint firstAttribute="bottom" secondItem="ZHg-nb-6L5" secondAttribute="bottom" id="S2G-QU-sAC"/>
                                     <constraint firstItem="8aQ-R0-7tr" firstAttribute="centerX" secondItem="gZi-Hs-yEI" secondAttribute="centerX" id="T0k-U7-6PM"/>
                                     <constraint firstItem="ZVu-qv-IBY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gZi-Hs-yEI" secondAttribute="leadingMargin" id="TaP-qV-axE"/>
@@ -177,9 +182,8 @@
                                     <constraint firstItem="8aQ-R0-7tr" firstAttribute="top" secondItem="ZVu-qv-IBY" secondAttribute="bottom" constant="16" id="hM8-7F-He2"/>
                                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ZVu-qv-IBY" secondAttribute="trailing" id="iIh-En-56m"/>
                                     <constraint firstItem="SHo-xT-rVk" firstAttribute="centerX" secondItem="gZi-Hs-yEI" secondAttribute="centerX" id="r2h-Fq-leG"/>
-                                    <constraint firstItem="ZHg-nb-6L5" firstAttribute="top" secondItem="gZi-Hs-yEI" secondAttribute="top" constant="275" id="uek-ln-oh2"/>
+                                    <constraint firstItem="ZHg-nb-6L5" firstAttribute="top" secondItem="gZi-Hs-yEI" secondAttribute="top" constant="268" id="uek-ln-oh2"/>
                                     <constraint firstItem="SoA-lm-zBP" firstAttribute="leading" secondItem="gZi-Hs-yEI" secondAttribute="leading" priority="750" id="yOC-1P-HTw"/>
-                                    <constraint firstItem="ZHg-nb-6L5" firstAttribute="top" secondItem="PBQ-3P-wqP" secondAttribute="bottom" constant="-29.5" id="zyq-il-Xv5"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -222,7 +226,4 @@
             <point key="canvasLocation" x="-256" y="318"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="AvatarImageView" width="16" height="16"/>
-    </resources>
 </document>

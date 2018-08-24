@@ -9,6 +9,7 @@
 import UIKit
 import ReactiveSwift
 import ReactiveCocoa
+import Kingfisher
 
 class GitHubRepositoryViewController: UIViewController {
 
@@ -24,6 +25,7 @@ class GitHubRepositoryViewController: UIViewController {
         navigationItem.reactive.title <~ viewModel.projectTitle
         userNameLabel?.reactive.text <~ viewModel.userName
         descriptionTitle?.reactive.text <~ viewModel.repositoryDescription
+        avatarImageView?.reactive.resource <~ viewModel.ownerAvatarResource
         
         viewModel.loadRepository()
     }

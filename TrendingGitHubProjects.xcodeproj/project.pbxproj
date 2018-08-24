@@ -26,6 +26,7 @@
 		D99E6B512130066C00A4BA74 /* GitHubRepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B502130066C00A4BA74 /* GitHubRepositoryViewModel.swift */; };
 		D99E6B5321300D5300A4BA74 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B5221300D5300A4BA74 /* AvatarImageView.swift */; };
 		D99E6B552130105600A4BA74 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B542130105600A4BA74 /* RoundedView.swift */; };
+		D99E6B5721301B5500A4BA74 /* KingfisherReactiveExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B5621301B5500A4BA74 /* KingfisherReactiveExtensions.swift */; };
 		D9FB2E18212B695F009BEB4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB2E17212B695F009BEB4B /* AppDelegate.swift */; };
 		D9FB2E1D212B695F009BEB4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9FB2E1B212B695F009BEB4B /* Main.storyboard */; };
 		D9FB2E1F212B6960009BEB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9FB2E1E212B6960009BEB4B /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		D99E6B502130066C00A4BA74 /* GitHubRepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryViewModel.swift; sourceTree = "<group>"; };
 		D99E6B5221300D5300A4BA74 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		D99E6B542130105600A4BA74 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		D99E6B5621301B5500A4BA74 /* KingfisherReactiveExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherReactiveExtensions.swift; sourceTree = "<group>"; };
 		D9FB2E14212B695F009BEB4B /* TrendingGitHubProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendingGitHubProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FB2E17212B695F009BEB4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9FB2E1C212B695F009BEB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				D99E6B47212F733D00A4BA74 /* UIViewControllerExtensions.swift */,
+				D99E6B5621301B5500A4BA74 /* KingfisherReactiveExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TrendingGitHubProjects/Pods-TrendingGitHubProjects-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
@@ -308,6 +312,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
@@ -363,6 +368,7 @@
 				D99E6B43212F6E2600A4BA74 /* GitHubTrendsCoordinator.swift in Sources */,
 				D99E6B41212F688700A4BA74 /* GitHubTrendsAssemble.swift in Sources */,
 				D99E6B45212F6E5E00A4BA74 /* CoordinatorView.swift in Sources */,
+				D99E6B5721301B5500A4BA74 /* KingfisherReactiveExtensions.swift in Sources */,
 				D9065CAC212E23A300532E76 /* GitHubClient.swift in Sources */,
 				D99E6B39212F624D00A4BA74 /* TableDataSourceAdapter.swift in Sources */,
 				D9065CAF212E284800532E76 /* JSONGitRepository.swift in Sources */,
