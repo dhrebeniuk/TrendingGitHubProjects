@@ -24,6 +24,8 @@
 		D99E6B4C212F7A3C00A4BA74 /* GitHubTrendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B4B212F7A3C00A4BA74 /* GitHubTrendsCell.swift */; };
 		D99E6B4F2130032300A4BA74 /* GitHubRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B4E2130032200A4BA74 /* GitHubRepositoryViewController.swift */; };
 		D99E6B512130066C00A4BA74 /* GitHubRepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B502130066C00A4BA74 /* GitHubRepositoryViewModel.swift */; };
+		D99E6B5321300D5300A4BA74 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B5221300D5300A4BA74 /* AvatarImageView.swift */; };
+		D99E6B552130105600A4BA74 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B542130105600A4BA74 /* RoundedView.swift */; };
 		D9FB2E18212B695F009BEB4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB2E17212B695F009BEB4B /* AppDelegate.swift */; };
 		D9FB2E1D212B695F009BEB4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9FB2E1B212B695F009BEB4B /* Main.storyboard */; };
 		D9FB2E1F212B6960009BEB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9FB2E1E212B6960009BEB4B /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		D99E6B4B212F7A3C00A4BA74 /* GitHubTrendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTrendsCell.swift; sourceTree = "<group>"; };
 		D99E6B4E2130032200A4BA74 /* GitHubRepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryViewController.swift; sourceTree = "<group>"; };
 		D99E6B502130066C00A4BA74 /* GitHubRepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryViewModel.swift; sourceTree = "<group>"; };
+		D99E6B5221300D5300A4BA74 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
+		D99E6B542130105600A4BA74 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		D9FB2E14212B695F009BEB4B /* TrendingGitHubProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendingGitHubProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FB2E17212B695F009BEB4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9FB2E1C212B695F009BEB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				D99E6B38212F624D00A4BA74 /* TableDataSourceAdapter.swift */,
 				D99E6B3C212F678F00A4BA74 /* Assemble.swift */,
 				D99E6B44212F6E5E00A4BA74 /* CoordinatorView.swift */,
+				D99E6B5221300D5300A4BA74 /* AvatarImageView.swift */,
+				D99E6B542130105600A4BA74 /* RoundedView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -348,6 +354,8 @@
 				D99E6B3F212F67D400A4BA74 /* ApplicationAssemble.swift in Sources */,
 				D9FB2E18212B695F009BEB4B /* AppDelegate.swift in Sources */,
 				D9065CB3212EBB1E00532E76 /* JSONGitRepositoryOwner.swift in Sources */,
+				D99E6B552130105600A4BA74 /* RoundedView.swift in Sources */,
+				D99E6B5321300D5300A4BA74 /* AvatarImageView.swift in Sources */,
 				D99E6B4F2130032300A4BA74 /* GitHubRepositoryViewController.swift in Sources */,
 				D99E6B512130066C00A4BA74 /* GitHubRepositoryViewModel.swift in Sources */,
 				D99E6B48212F733D00A4BA74 /* UIViewControllerExtensions.swift in Sources */,

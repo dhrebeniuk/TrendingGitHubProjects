@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import ReactiveSwift
+import ReactiveCocoa
 
 class GitHubRepositoryViewController: UIViewController {
 
     var viewModel: GitHubRepositoryViewModel!
     
+    @IBOutlet weak var avatarImageView: UIImageView?
+    @IBOutlet weak var userNameLabel: UILabel?
+    @IBOutlet weak var descriptionTitle: UILabel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navigationItem.reactive.title <~ viewModel.projectTitle
+        userNameLabel?.reactive.text <~ viewModel.userName
+        descriptionTitle?.reactive.text <~ viewModel.repositoryDescription
+        
+        viewModel.loadRepository()
     }
 
 }

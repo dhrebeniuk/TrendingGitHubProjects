@@ -51,4 +51,31 @@ extension GitHubClient {
             }
         }
     }
+    
+    func createRepositoryDetailsSignalProducer(repositoryId: Int) -> SignalProducer<JSONGitRepository, GitHubError> {
+        
+        let repositoryURL = self.webAPIURL
+            .appendingPathComponent("repositories").appendingPathComponent("\(repositoryId)")
+        
+        return SignalProducer<JSONGitRepository, GitHubError> { observer, arg  in
+            Alamofire.request(repositoryURL, method: .get, parameters: [:]).responseData { response in
+                switch response.result {
+                case .success(let jsonData):
+                    let decoder = JSONDecoder()
+                    do {
+                        let repository = try decoder.decode(JSONGitRepository.self, from: jsonData)
+                        observer.send(value: repository)
+                    }
+                    catch {
+                        observer.send(error: GitHubError.jsonFail(error))
+                    }
+                case .failure(_):
+                    response.response.map {
+                        observer.send(error: GitHubError.httpError($0.statusCode))
+                    }
+                }
+            }
+        }
+    }
+    
 }

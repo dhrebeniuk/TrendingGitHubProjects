@@ -46,7 +46,7 @@ class GitHubTrendsCoordinator: GitHubTrendsCoordinatorInput {
     
     func open(repository repositoryId: Int) {
         let client = container.resolve(GitHubClient.self)!
-        let viewModel = GitHubRepositoryViewModel(client: client, projectId: repositoryId)
+        let viewModel = GitHubRepositoryViewModel(client: client, repositoryId: repositoryId)
         
         view?.perform(segue: GitHubTrendsCoordinator.showGitHubProjectSegue) { (gitHubProjectViewController: GitHubRepositoryViewController) in
             gitHubProjectViewController.viewModel = viewModel

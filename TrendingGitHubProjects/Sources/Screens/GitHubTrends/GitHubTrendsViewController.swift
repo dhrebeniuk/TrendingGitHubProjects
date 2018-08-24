@@ -38,7 +38,7 @@ class GitHubTrendsViewController: UITableViewController {
                 
                 let dataSourceAdapter = TableDataSourceAdapter<GitHubTrendsCell, JSONGitRepository>(identifier: GitHubTrendsViewController.projectCellIdentifier, objects: repositories) { (cell, repository) in
                     
-                    cell.projectNameLabel?.text = repository.full_name
+                    cell.projectNameLabel?.text = repository.name
                     cell.projectStarsCountLabel?.text = "\(repository.forks_count)"
                     cell.projectDescriptionLabel?.text = repository.description ?? ""
                 }

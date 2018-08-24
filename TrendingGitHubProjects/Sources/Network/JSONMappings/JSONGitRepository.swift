@@ -12,7 +12,7 @@ struct JSONGitRepository: Decodable {
 
     let id: Int
 
-    let full_name: String
+    let name: String
     
     let stargazers_count: Int
     let forks_count: Int
