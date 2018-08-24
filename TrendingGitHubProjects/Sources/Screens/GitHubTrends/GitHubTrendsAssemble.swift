@@ -22,7 +22,7 @@ class GitHubTrendsAssemble: Assemble {
         }
     
         container.register(GitHubTrendsCoordinator.self) { resolver in
-            return GitHubTrendsCoordinator()
+            return GitHubTrendsCoordinator(container: container)
         }.inObjectScope(.container)
         
         container.storyboardInitCompleted(GitHubTrendsViewController.self) { resolver, controller in

@@ -16,7 +16,7 @@ class GitHubTrendsViewController: UITableViewController {
     var viewModel: GitHubTrendsViewModel!
     
     private static let projectCellIdentifier = "projectCellIdentifier"
-    
+        
     private var dataSourceAdapter: TableDataSourceAdapter<GitHubTrendsCell, JSONGitRepository>?
     private var searchResultsController: UISearchController?
     
@@ -56,6 +56,14 @@ class GitHubTrendsViewController: UITableViewController {
     
     @IBAction func refreshData(_ sender: Any) {
         viewModel.loadRepositories(query: searchResultsController?.searchBar.text)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let objects = self.dataSourceAdapter?.objects ?? []
+        if objects.count > indexPath.row {
+            let repository = objects[indexPath.row]
+            viewModel.open(repository: repository)
+        }
     }
 }
 

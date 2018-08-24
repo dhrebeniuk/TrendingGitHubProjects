@@ -41,5 +41,8 @@ class GitHubTrendsViewModel {
         }
     }
     
+    func open(repository: JSONGitRepository) {
+       coordinator.open(repository: repository.id)
+    }
 }
 

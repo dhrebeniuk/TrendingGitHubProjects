@@ -10,6 +10,8 @@ import Foundation
 
 struct JSONGitRepository: Decodable {
 
+    let id: Int
+
     let full_name: String
     
     let stargazers_count: Int

@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -78,10 +79,28 @@
                             <action selector="refreshData:" destination="pot-Y8-2UN" eventType="valueChanged" id="gzF-p4-B8e"/>
                         </connections>
                     </refreshControl>
+                    <connections>
+                        <segue destination="cMG-g1-7qr" kind="show" identifier="showGitHubProjectSegue" id="8NI-Or-jtA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mF-lv-cWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="693.60000000000002" y="317.99100449775113"/>
+        </scene>
+        <!--Git Hub Repository View Controller-->
+        <scene sceneID="fPA-wz-aTF">
+            <objects>
+                <viewController id="cMG-g1-7qr" customClass="GitHubRepositoryViewController" customModule="TrendingGitHubProjects" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j5j-uS-9BW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Tdz-Qc-BGv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lnN-6k-QlG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1609" y="318"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LEO-wp-EF6">

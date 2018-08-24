@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Swinject
 
 protocol GitHubTrendsCoordinatorInput {
     
@@ -16,11 +17,20 @@ protocol GitHubTrendsCoordinatorInput {
     
     func show(errorMessage: String)
     
+    func open(repository repositoryId: Int)
 }
 
 class GitHubTrendsCoordinator: GitHubTrendsCoordinatorInput {
     
+    static let showGitHubProjectSegue = "showGitHubProjectSegue"
+
     weak var view: GitHubTrendsView?
+    
+    private let container: Swinject.Container
+    
+    init(container: Swinject.Container) {
+        self.container = container
+    }
     
     func unblockUI() {
         view?.unblockUI()
@@ -32,5 +42,14 @@ class GitHubTrendsCoordinator: GitHubTrendsCoordinatorInput {
     
     func show(errorMessage: String) {
         view?.show(errorMessage: errorMessage)
+    }
+    
+    func open(repository repositoryId: Int) {
+        let client = container.resolve(GitHubClient.self)!
+        let viewModel = GitHubRepositoryViewModel(client: client, projectId: repositoryId)
+        
+        view?.perform(segue: GitHubTrendsCoordinator.showGitHubProjectSegue) { (gitHubProjectViewController: GitHubRepositoryViewController) in
+            gitHubProjectViewController.viewModel = viewModel
+        }
     }
 }

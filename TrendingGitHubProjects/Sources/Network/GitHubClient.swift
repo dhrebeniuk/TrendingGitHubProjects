@@ -32,7 +32,7 @@ extension GitHubClient {
         let parameters = ["q": query, "sort": "stars", "order": "desc"] as [String: Any]
         
         return SignalProducer<[JSONGitRepository], GitHubError> { observer, arg  in
-            Alamofire.request(repositoriesURL, method: .get, parameters: parameters).responseData { (response) in
+            Alamofire.request(repositoriesURL, method: .get, parameters: parameters).responseData { response in
                 switch response.result {
                 case .success(let jsonData):
                     let decoder = JSONDecoder()
