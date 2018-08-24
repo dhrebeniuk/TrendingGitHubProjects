@@ -23,8 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: applicationAssemble.container)
         window?.rootViewController = storyboard.instantiateInitialViewController()
         
+        setupNavigatioBarAppearance()
+        
         return true
     }
 
-}
+    private func setupNavigatioBarAppearance() {
+        let mainTintColor = UIColor(named: "MainTintColor")
+        mainTintColor.map {
+            UIBarButtonItem.appearance().tintColor = $0
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: $0]
+        }
+    }
 
+}
