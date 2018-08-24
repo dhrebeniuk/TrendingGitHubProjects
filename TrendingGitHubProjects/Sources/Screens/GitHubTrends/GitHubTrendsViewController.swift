@@ -8,6 +8,7 @@
 
 import UIKit
 import ReactiveSwift
+import ReactiveCocoa
 import Result
 
 class GitHubTrendsViewController: UITableViewController {
@@ -17,9 +18,16 @@ class GitHubTrendsViewController: UITableViewController {
     private static let projectCellIdentifier = "projectCellIdentifier"
     
     private var dataSourceAdapter: TableDataSourceAdapter<GitHubTrendsCell, JSONGitRepository>?
+    private var searchResultsController: UISearchController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchResultsController = searchController
+        searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
         
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -40,10 +48,14 @@ class GitHubTrendsViewController: UITableViewController {
         }
         
         viewModel.loadRepositories()
+        
+        searchResultsController?.searchBar.reactive.continuousTextValues.observeValues() { [weak self] in
+            self?.viewModel.loadRepositories(query: $0)
+        }
     }
     
     @IBAction func refreshData(_ sender: Any) {
-        viewModel.loadRepositories()
+        viewModel.loadRepositories(query: searchResultsController?.searchBar.text)
     }
 }
 

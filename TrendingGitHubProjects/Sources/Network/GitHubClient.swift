@@ -24,12 +24,12 @@ class GitHubClient {
 
 extension GitHubClient {
     
-    func createTrendingRepositoriesSignalProducer() -> SignalProducer<[JSONGitRepository], GitHubError> {
+    func createTrendingRepositoriesSignalProducer(query: String = "any") -> SignalProducer<[JSONGitRepository], GitHubError> {
         
         let repositoriesURL = self.webAPIURL.appendingPathComponent("search")
             .appendingPathComponent("repositories")
         
-        let parameters = ["q": "any", "sort": "stars", "order": "desc"] as [String: Any]
+        let parameters = ["q": query, "sort": "stars", "order": "desc"] as [String: Any]
         
         return SignalProducer<[JSONGitRepository], GitHubError> { observer, arg  in
             Alamofire.request(repositoriesURL, method: .get, parameters: parameters).responseData { (response) in

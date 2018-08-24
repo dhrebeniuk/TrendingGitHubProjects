@@ -21,10 +21,12 @@ class GitHubTrendsViewModel {
     
     private(set) var repositories = MutableProperty<[JSONGitRepository]>([])
 
-    func loadRepositories() {
+    func loadRepositories(query: String? = nil) {
         coordinator.blockUI()
         
-        client.createTrendingRepositoriesSignalProducer()
+        let seachQuery = (query?.count ?? 0) > 0 ? query ?? "" : "any"
+        
+        client.createTrendingRepositoriesSignalProducer(query: seachQuery)
             .observe(on: QueueScheduler.main)
             .start { [weak self] in
                 self?.coordinator.unblockUI()
