@@ -129,31 +129,56 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="{Description}" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHo-xT-rVk">
-                                        <rect key="frame" x="138" y="208" width="100" height="21"/>
+                                        <rect key="frame" x="138" y="208" width="100" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.6705882352941176" green="0.72941176470588232" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZHg-nb-6L5">
-                                        <rect key="frame" x="0.0" y="268" width="375" height="335"/>
-                                        <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" priority="750" constant="335" id="rws-KA-ZA6"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBQ-3P-wqP" customClass="RoundedView" customModule="TrendingGitHubProjects" customModuleProvider="target">
-                                        <rect key="frame" x="68" y="245" width="240" height="50"/>
+                                        <rect key="frame" x="68" y="244.5" width="240" height="50"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvd-l5-7gH">
+                                                <rect key="frame" x="121.5" y="1" width="1" height="49"/>
+                                                <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="1" id="Kku-sp-bFB"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{0 Starts}" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZG-Ml-IhJ">
+                                                <rect key="frame" x="8" y="0.0" width="113.5" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <color key="textColor" red="0.38039215686274508" green="0.49019607843137253" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{0 Forks}" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lh5-Ih-ZlA">
+                                                <rect key="frame" x="130.5" y="0.0" width="109.5" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <color key="textColor" red="0.3803921569" green="0.49019607840000001" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="lh5-Ih-ZlA" secondAttribute="trailing" id="2fK-bO-JX9"/>
                                             <constraint firstAttribute="width" constant="240" id="88S-9T-Tgp"/>
-                                            <constraint firstAttribute="height" constant="50" id="vnC-Mp-OJf"/>
+                                            <constraint firstItem="Dvd-l5-7gH" firstAttribute="leading" secondItem="TZG-Ml-IhJ" secondAttribute="trailing" id="J8S-Nv-hdN"/>
+                                            <constraint firstAttribute="bottom" secondItem="Dvd-l5-7gH" secondAttribute="bottom" id="PaP-Is-eZd"/>
+                                            <constraint firstItem="TZG-Ml-IhJ" firstAttribute="top" secondItem="PBQ-3P-wqP" secondAttribute="top" id="QkI-1c-4sb"/>
+                                            <constraint firstItem="TZG-Ml-IhJ" firstAttribute="leading" secondItem="PBQ-3P-wqP" secondAttribute="leading" constant="8" id="Vy4-HO-ZTX"/>
+                                            <constraint firstAttribute="height" constant="50" id="ZLD-Qk-Nu6"/>
+                                            <constraint firstAttribute="bottom" secondItem="TZG-Ml-IhJ" secondAttribute="bottom" id="bML-cT-aaq"/>
+                                            <constraint firstAttribute="bottom" secondItem="lh5-Ih-ZlA" secondAttribute="bottom" id="bbi-9e-Yp3"/>
+                                            <constraint firstItem="Dvd-l5-7gH" firstAttribute="top" secondItem="PBQ-3P-wqP" secondAttribute="top" constant="1" id="gPB-h8-lLu"/>
+                                            <constraint firstItem="lh5-Ih-ZlA" firstAttribute="top" secondItem="PBQ-3P-wqP" secondAttribute="top" id="oQ4-nt-JJH"/>
+                                            <constraint firstItem="Dvd-l5-7gH" firstAttribute="centerX" secondItem="PBQ-3P-wqP" secondAttribute="centerX" constant="2" id="xIv-bY-26I"/>
+                                            <constraint firstItem="lh5-Ih-ZlA" firstAttribute="leading" secondItem="Dvd-l5-7gH" secondAttribute="trailing" constant="8" id="yS7-GZ-Ff5"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="corderRadius">
                                                 <real key="value" value="12"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.78823529411764703" green="0.82745098039215681" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -162,27 +187,22 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ZHg-nb-6L5" secondAttribute="trailing" id="0jZ-jD-Kkl"/>
                                     <constraint firstItem="PBQ-3P-wqP" firstAttribute="top" secondItem="SHo-xT-rVk" secondAttribute="bottom" constant="16" id="Anu-tO-fIn"/>
                                     <constraint firstItem="PBQ-3P-wqP" firstAttribute="centerX" secondItem="gZi-Hs-yEI" secondAttribute="centerX" id="Au7-th-yps"/>
                                     <constraint firstAttribute="trailing" secondItem="SoA-lm-zBP" secondAttribute="trailing" priority="750" id="IJf-pm-I8T"/>
                                     <constraint firstItem="ZVu-qv-IBY" firstAttribute="top" secondItem="SoA-lm-zBP" secondAttribute="bottom" constant="24" id="J3o-OP-tnZ"/>
                                     <constraint firstItem="SoA-lm-zBP" firstAttribute="top" secondItem="gZi-Hs-yEI" secondAttribute="top" constant="24" id="LG2-Jc-OHo"/>
                                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="SHo-xT-rVk" secondAttribute="trailing" id="Lfv-tF-ymo"/>
-                                    <constraint firstItem="ZHg-nb-6L5" firstAttribute="centerX" secondItem="gZi-Hs-yEI" secondAttribute="centerX" id="PJ6-Yq-XuL"/>
-                                    <constraint firstItem="ZHg-nb-6L5" firstAttribute="top" secondItem="SHo-xT-rVk" secondAttribute="bottom" constant="39" id="RNI-Cl-czh"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZHg-nb-6L5" secondAttribute="bottom" id="S2G-QU-sAC"/>
                                     <constraint firstItem="8aQ-R0-7tr" firstAttribute="centerX" secondItem="gZi-Hs-yEI" secondAttribute="centerX" id="T0k-U7-6PM"/>
                                     <constraint firstItem="ZVu-qv-IBY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gZi-Hs-yEI" secondAttribute="leadingMargin" id="TaP-qV-axE"/>
                                     <constraint firstItem="SHo-xT-rVk" firstAttribute="top" secondItem="8aQ-R0-7tr" secondAttribute="bottom" constant="16" id="TfM-ww-5R9"/>
                                     <constraint firstItem="ZVu-qv-IBY" firstAttribute="centerX" secondItem="gZi-Hs-yEI" secondAttribute="centerX" id="ZkY-BM-5UY"/>
                                     <constraint firstItem="SoA-lm-zBP" firstAttribute="centerX" secondItem="gZi-Hs-yEI" secondAttribute="centerX" id="ad8-dt-q27"/>
                                     <constraint firstItem="SHo-xT-rVk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gZi-Hs-yEI" secondAttribute="leadingMargin" id="en1-Ef-AxX"/>
-                                    <constraint firstItem="ZHg-nb-6L5" firstAttribute="leading" secondItem="gZi-Hs-yEI" secondAttribute="leading" id="fcR-DD-KVi"/>
+                                    <constraint firstAttribute="bottom" secondItem="PBQ-3P-wqP" secondAttribute="bottom" priority="750" constant="20" id="g1b-NS-cTF"/>
                                     <constraint firstItem="8aQ-R0-7tr" firstAttribute="top" secondItem="ZVu-qv-IBY" secondAttribute="bottom" constant="16" id="hM8-7F-He2"/>
                                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ZVu-qv-IBY" secondAttribute="trailing" id="iIh-En-56m"/>
                                     <constraint firstItem="SHo-xT-rVk" firstAttribute="centerX" secondItem="gZi-Hs-yEI" secondAttribute="centerX" id="r2h-Fq-leG"/>
-                                    <constraint firstItem="ZHg-nb-6L5" firstAttribute="top" secondItem="gZi-Hs-yEI" secondAttribute="top" constant="268" id="uek-ln-oh2"/>
                                     <constraint firstItem="SoA-lm-zBP" firstAttribute="leading" secondItem="gZi-Hs-yEI" secondAttribute="leading" priority="750" id="yOC-1P-HTw"/>
                                 </constraints>
                             </scrollView>
@@ -201,6 +221,8 @@
                     <connections>
                         <outlet property="avatarImageView" destination="SoA-lm-zBP" id="Zwu-vC-7dm"/>
                         <outlet property="descriptionTitle" destination="SHo-xT-rVk" id="S4i-WC-uyr"/>
+                        <outlet property="forksLabel" destination="lh5-Ih-ZlA" id="mGd-OX-6Un"/>
+                        <outlet property="starsLabel" destination="TZG-Ml-IhJ" id="ug0-yD-TiJ"/>
                         <outlet property="userNameLabel" destination="ZVu-qv-IBY" id="I4K-3x-vao"/>
                     </connections>
                 </viewController>

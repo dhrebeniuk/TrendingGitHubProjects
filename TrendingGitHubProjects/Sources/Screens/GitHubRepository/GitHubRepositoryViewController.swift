@@ -18,7 +18,9 @@ class GitHubRepositoryViewController: UIViewController {
     @IBOutlet weak var avatarImageView: UIImageView?
     @IBOutlet weak var userNameLabel: UILabel?
     @IBOutlet weak var descriptionTitle: UILabel?
-
+    @IBOutlet weak var starsLabel: UILabel?
+    @IBOutlet weak var forksLabel: UILabel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +28,8 @@ class GitHubRepositoryViewController: UIViewController {
         userNameLabel?.reactive.text <~ viewModel.userName
         descriptionTitle?.reactive.text <~ viewModel.repositoryDescription
         avatarImageView?.reactive.resource <~ viewModel.ownerAvatarResource
+        starsLabel?.reactive.text <~ viewModel.starsCountString
+        forksLabel?.reactive.text <~ viewModel.forksCountString
         
         viewModel.loadRepository()
     }

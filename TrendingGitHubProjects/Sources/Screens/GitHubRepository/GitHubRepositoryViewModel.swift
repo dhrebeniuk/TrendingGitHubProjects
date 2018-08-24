@@ -25,6 +25,9 @@ class GitHubRepositoryViewModel {
     private(set) var repositoryDescription = MutableProperty<String>("")
     private(set) var ownerAvatarResource = MutableProperty<Resource?>(nil)
 
+    private(set) var starsCountString = MutableProperty<String?>("")
+    private(set) var forksCountString = MutableProperty<String?>("")
+
     func loadRepository() {
         client.createRepositoryDetailsSignalProducer(repositoryId: repositoryId)
             .observe(on: QueueScheduler.main)
@@ -37,6 +40,10 @@ class GitHubRepositoryViewModel {
                     self?.ownerAvatarResource.value = repository.owner.avatar_url.flatMap { urlString -> Resource? in
                         URL(string: urlString)
                     }
+                    
+                    self?.starsCountString.value = String(format: NSLocalizedString("%@ Stars", comment: ""), "\(repository.stargazers_count)")
+                    
+                    self?.forksCountString.value = String(format: NSLocalizedString("%@ Forks", comment: ""), "\(repository.forks_count)")
                 case .failed(_):
                     break
                 default:
