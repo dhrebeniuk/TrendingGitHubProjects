@@ -78,4 +78,36 @@ extension GitHubClient {
         }
     }
     
+    func createReadMeSignalProducer(ownerName: String, repositoryName: String) -> SignalProducer<JSONGitReadme, GitHubError> {
+        let readmeURL = self.webAPIURL
+            .appendingPathComponent("repos")
+            .appendingPathComponent(ownerName)
+            .appendingPathComponent(repositoryName)
+            .appendingPathComponent("readme")
+        
+        return SignalProducer<JSONGitReadme, GitHubError> { observer, arg  in
+            
+            
+            
+            Alamofire.request(readmeURL, method: .get, parameters: [:], headers: ["X-GitHub-Media-Type": "application/vnd.github.VERSION.html"]).responseData { response in
+                switch response.result {
+                case .success(let jsonData):
+                    let decoder = JSONDecoder()
+                    do {
+                        let readMe = try decoder.decode(JSONGitReadme.self, from: jsonData)
+                        observer.send(value: readMe)
+                    }
+                    catch {
+                        observer.send(error: GitHubError.jsonFail(error))
+                    }
+                case .failure(_):
+                    response.response.map {
+                        observer.send(error: GitHubError.httpError($0.statusCode))
+                    }
+                }
+            }
+        }
+    }
+    
+    
 }

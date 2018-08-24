@@ -27,6 +27,8 @@
 		D99E6B5321300D5300A4BA74 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B5221300D5300A4BA74 /* AvatarImageView.swift */; };
 		D99E6B552130105600A4BA74 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B542130105600A4BA74 /* RoundedView.swift */; };
 		D99E6B5721301B5500A4BA74 /* KingfisherReactiveExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B5621301B5500A4BA74 /* KingfisherReactiveExtensions.swift */; };
+		D99E6B59213056E000A4BA74 /* JSONGitReadme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B58213056E000A4BA74 /* JSONGitReadme.swift */; };
+		D99E6B5D21308AF000A4BA74 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B5C21308AF000A4BA74 /* StringExtensions.swift */; };
 		D9FB2E18212B695F009BEB4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB2E17212B695F009BEB4B /* AppDelegate.swift */; };
 		D9FB2E1D212B695F009BEB4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9FB2E1B212B695F009BEB4B /* Main.storyboard */; };
 		D9FB2E1F212B6960009BEB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9FB2E1E212B6960009BEB4B /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 		D99E6B5221300D5300A4BA74 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		D99E6B542130105600A4BA74 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		D99E6B5621301B5500A4BA74 /* KingfisherReactiveExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherReactiveExtensions.swift; sourceTree = "<group>"; };
+		D99E6B58213056E000A4BA74 /* JSONGitReadme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONGitReadme.swift; sourceTree = "<group>"; };
+		D99E6B5C21308AF000A4BA74 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		D9FB2E14212B695F009BEB4B /* TrendingGitHubProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendingGitHubProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FB2E17212B695F009BEB4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9FB2E1C212B695F009BEB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 				D9065CAE212E284800532E76 /* JSONGitRepository.swift */,
 				D9065CB2212EBB1E00532E76 /* JSONGitRepositoryOwner.swift */,
 				D99E6B49212F795C00A4BA74 /* JSONGitRepositoriesResult.swift */,
+				D99E6B58213056E000A4BA74 /* JSONGitReadme.swift */,
 			);
 			path = JSONMappings;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			children = (
 				D99E6B47212F733D00A4BA74 /* UIViewControllerExtensions.swift */,
 				D99E6B5621301B5500A4BA74 /* KingfisherReactiveExtensions.swift */,
+				D99E6B5C21308AF000A4BA74 /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 				D99E6B4A212F795C00A4BA74 /* JSONGitRepositoriesResult.swift in Sources */,
 				D99E6B3D212F678F00A4BA74 /* Assemble.swift in Sources */,
 				D9065CB1212E2A0900532E76 /* GitHubTrendsViewModel.swift in Sources */,
+				D99E6B59213056E000A4BA74 /* JSONGitReadme.swift in Sources */,
 				D99E6B4C212F7A3C00A4BA74 /* GitHubTrendsCell.swift in Sources */,
 				D99E6B3F212F67D400A4BA74 /* ApplicationAssemble.swift in Sources */,
 				D9FB2E18212B695F009BEB4B /* AppDelegate.swift in Sources */,
@@ -362,6 +369,7 @@
 				D99E6B552130105600A4BA74 /* RoundedView.swift in Sources */,
 				D99E6B5321300D5300A4BA74 /* AvatarImageView.swift in Sources */,
 				D99E6B4F2130032300A4BA74 /* GitHubRepositoryViewController.swift in Sources */,
+				D99E6B5D21308AF000A4BA74 /* StringExtensions.swift in Sources */,
 				D99E6B512130066C00A4BA74 /* GitHubRepositoryViewModel.swift in Sources */,
 				D99E6B48212F733D00A4BA74 /* UIViewControllerExtensions.swift in Sources */,
 				D99E6B3B212F674200A4BA74 /* GitHubTrendsView.swift in Sources */,
@@ -519,10 +527,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7VUQ53W6C9;
 				INFOPLIST_FILE = TrendingGitHubProjects/Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dmytro.TrendingGitHubProjects;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -538,10 +543,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7VUQ53W6C9;
 				INFOPLIST_FILE = TrendingGitHubProjects/Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dmytro.TrendingGitHubProjects;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
