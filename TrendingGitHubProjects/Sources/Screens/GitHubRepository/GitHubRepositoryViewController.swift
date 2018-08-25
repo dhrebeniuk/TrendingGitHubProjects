@@ -25,18 +25,33 @@ class GitHubRepositoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationItem.reactive.title <~ viewModel.projectTitle
-        userNameLabel?.reactive.text <~ viewModel.userName
-        descriptionTitle?.reactive.text <~ viewModel.repositoryDescription
-        avatarImageView?.reactive.resource <~ viewModel.ownerAvatarResource
-        starsLabel?.reactive.text <~ viewModel.starsCountString
-        forksLabel?.reactive.text <~ viewModel.forksCountString
         
-        readMeNameLabel?.reactive.text <~ viewModel.readMeName
-        readMeContentLabel?.reactive.text <~ viewModel.readMeContent
+        bindViewModel()
         
         viewModel.loadRepository()
+    }
+    
+    private func bindViewModel() {
+        navigationItem.reactive.title <~ viewModel.projectTitle
+        avatarImageView?.reactive.resource <~ viewModel.ownerAvatarResource
+
+        userNameLabel?.reactive.isHidden <~ viewModel.userName.map() { $0.count == 0 }
+        userNameLabel?.reactive.text <~ viewModel.userName
+        
+        descriptionTitle?.reactive.isHidden <~ viewModel.repositoryDescription.map() { $0.count == 0 }
+        descriptionTitle?.reactive.text <~ viewModel.repositoryDescription
+        
+        starsLabel?.reactive.isHidden <~ viewModel.starsCountString.map() { $0.count == 0 }
+        starsLabel?.reactive.text <~ viewModel.starsCountString
+        
+        forksLabel?.reactive.isHidden <~ viewModel.forksCountString.map() { $0.count == 0 }
+        forksLabel?.reactive.text <~ viewModel.forksCountString
+        
+        readMeNameLabel?.reactive.isHidden <~ viewModel.readMeName.map() { $0.count == 0 }
+        readMeNameLabel?.reactive.text <~ viewModel.readMeName
+        
+        readMeContentLabel?.reactive.isHidden <~ viewModel.readMeContent.map() { $0?.count == 0 }
+        readMeContentLabel?.reactive.text <~ viewModel.readMeContent
     }
 
 }
