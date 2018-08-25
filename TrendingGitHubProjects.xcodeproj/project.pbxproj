@@ -13,6 +13,8 @@
 		D9065CB1212E2A0900532E76 /* GitHubTrendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9065CB0212E2A0900532E76 /* GitHubTrendsViewModel.swift */; };
 		D9065CB3212EBB1E00532E76 /* JSONGitRepositoryOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9065CB2212EBB1E00532E76 /* JSONGitRepositoryOwner.swift */; };
 		D988EDB8213176B900A5893E /* JSONSErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D988EDB7213176B900A5893E /* JSONSErrorMessage.swift */; };
+		D988EDBA2131B26300A5893E /* GitHubRepositoryViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D988EDB92131B26300A5893E /* GitHubRepositoryViewModelProtocol.swift */; };
+		D988EDBC2131B28600A5893E /* GitHubTrendsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D988EDBB2131B28600A5893E /* GitHubTrendsViewModelProtocol.swift */; };
 		D99E6B39212F624D00A4BA74 /* TableDataSourceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B38212F624D00A4BA74 /* TableDataSourceAdapter.swift */; };
 		D99E6B3B212F674200A4BA74 /* GitHubTrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B3A212F674200A4BA74 /* GitHubTrendsView.swift */; };
 		D99E6B3D212F678F00A4BA74 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B3C212F678F00A4BA74 /* Assembly.swift */; };
@@ -46,6 +48,8 @@
 		D9065CB0212E2A0900532E76 /* GitHubTrendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTrendsViewModel.swift; sourceTree = "<group>"; };
 		D9065CB2212EBB1E00532E76 /* JSONGitRepositoryOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONGitRepositoryOwner.swift; sourceTree = "<group>"; };
 		D988EDB7213176B900A5893E /* JSONSErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSErrorMessage.swift; sourceTree = "<group>"; };
+		D988EDB92131B26300A5893E /* GitHubRepositoryViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryViewModelProtocol.swift; sourceTree = "<group>"; };
+		D988EDBB2131B28600A5893E /* GitHubTrendsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTrendsViewModelProtocol.swift; sourceTree = "<group>"; };
 		D99E6B38212F624D00A4BA74 /* TableDataSourceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSourceAdapter.swift; sourceTree = "<group>"; };
 		D99E6B3A212F674200A4BA74 /* GitHubTrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTrendsView.swift; sourceTree = "<group>"; };
 		D99E6B3C212F678F00A4BA74 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 			children = (
 				D99E6B4E2130032200A4BA74 /* GitHubRepositoryViewController.swift */,
 				D99E6B502130066C00A4BA74 /* GitHubRepositoryViewModel.swift */,
+				D988EDB92131B26300A5893E /* GitHubRepositoryViewModelProtocol.swift */,
 			);
 			path = GitHubRepository;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				D99E6B4B212F7A3C00A4BA74 /* GitHubTrendsCell.swift */,
 				D99E6B3A212F674200A4BA74 /* GitHubTrendsView.swift */,
 				D9FB2E2F212B70D4009BEB4B /* GitHubTrendsViewController.swift */,
+				D988EDBB2131B28600A5893E /* GitHubTrendsViewModelProtocol.swift */,
 				D9065CB0212E2A0900532E76 /* GitHubTrendsViewModel.swift */,
 				D99E6B42212F6E2600A4BA74 /* GitHubTrendsCoordinator.swift */,
 				D99E6B40212F688700A4BA74 /* GitHubTrendsAssembly.swift */,
@@ -377,7 +383,9 @@
 				D99E6B43212F6E2600A4BA74 /* GitHubTrendsCoordinator.swift in Sources */,
 				D99E6B41212F688700A4BA74 /* GitHubTrendsAssembly.swift in Sources */,
 				D99E6B45212F6E5E00A4BA74 /* CoordinatorView.swift in Sources */,
+				D988EDBC2131B28600A5893E /* GitHubTrendsViewModelProtocol.swift in Sources */,
 				D99E6B5721301B5500A4BA74 /* KingfisherReactiveExtensions.swift in Sources */,
+				D988EDBA2131B26300A5893E /* GitHubRepositoryViewModelProtocol.swift in Sources */,
 				D9065CAC212E23A300532E76 /* GitHubClient.swift in Sources */,
 				D99E6B39212F624D00A4BA74 /* TableDataSourceAdapter.swift in Sources */,
 				D988EDB8213176B900A5893E /* JSONSErrorMessage.swift in Sources */,

@@ -11,19 +11,6 @@ import ReactiveSwift
 import Kingfisher
 import Result
 
-protocol GitHubRepositoryViewModelProtocol {
-    var projectTitle: Signal<String, NoError> { get }
-    var userName: Signal<String, NoError> { get }
-    var repositoryDescription: Signal<String, NoError> { get }
-    var ownerAvatarResource: Signal<Resource?, NoError> { get }
-    var starsCountString: Signal<String, NoError> { get }
-    var forksCountString: Signal<String, NoError> { get }
-    var readMeName: Signal<String, NoError> { get }
-    var readMeContent: Signal<String?, NoError> { get }
-    
-    func loadRepository()
-}
-
 class GitHubRepositoryViewModel: GitHubRepositoryViewModelProtocol {
     
     private let client: GitHubClient

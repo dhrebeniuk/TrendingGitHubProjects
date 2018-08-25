@@ -10,14 +10,6 @@ import Foundation
 import ReactiveSwift
 import Result
 
-protocol GitHubTrendsViewModelProtocol {
-    var repositories: Signal<[JSONGitRepository], NoError> { get }
-
-    func loadRepositories(query: String?)
-    
-    func open(repository: JSONGitRepository)
-}
-
 class GitHubTrendsViewModel: GitHubTrendsViewModelProtocol {
 
     private let client: GitHubClient
