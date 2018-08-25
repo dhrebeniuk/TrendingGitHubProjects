@@ -12,9 +12,9 @@ import ReactiveSwift
 class GitHubTrendsViewModel {
 
     private let client: GitHubClient
-    private let coordinator: GitHubTrendsCoordinatorInput
+    private let coordinator: GitHubTrendsCoordinatorProtocol
     
-    init(client: GitHubClient, coordinator: GitHubTrendsCoordinatorInput) {
+    init(client: GitHubClient, coordinator: GitHubTrendsCoordinatorProtocol) {
         self.client = client
         self.coordinator = coordinator
     }

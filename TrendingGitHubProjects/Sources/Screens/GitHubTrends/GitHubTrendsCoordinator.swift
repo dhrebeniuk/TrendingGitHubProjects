@@ -9,7 +9,7 @@
 import Foundation
 import Swinject
 
-protocol GitHubTrendsCoordinatorInput {
+protocol GitHubTrendsCoordinatorProtocol {
     
     func unblockUI()
     
@@ -20,7 +20,7 @@ protocol GitHubTrendsCoordinatorInput {
     func open(repository repositoryId: Int)
 }
 
-class GitHubTrendsCoordinator: GitHubTrendsCoordinatorInput {
+class GitHubTrendsCoordinator: GitHubTrendsCoordinatorProtocol {
     
     static let showGitHubProjectSegue = "showGitHubProjectSegue"
 
