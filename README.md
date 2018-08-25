@@ -15,7 +15,7 @@ Application use MVVM-C Arhcitecture.
 
 Any screen consist from View and ViewModel. 
 * "View": implemented by UIViewController
-* "ViewModel" implements business logic and provide observable properties for ability bind them to UI.
+* "ViewModel" implements business logic and provide signals for ability bind them to UI.
 * "Coordinator" is component which encapsulate logic for forwarding between UI flows
 * "Assebly" is component for dependecies between others components and setup DI
 * "GitHubClient" is commont model component which encapsulate GitHub REST API
