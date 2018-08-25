@@ -10,9 +10,9 @@ import UIKit
 import Swinject
 import SwinjectStoryboard
 
-class GitHubTrendsAssembly: Assemble {
+class GitHubTrendsAssembly: Assembly {
 
-    func assembly(in container:  Swinject.Container) {
+    func assemble(in container:  Swinject.Container) {
         
         container.register(GitHubTrendsViewModel.self) { resolver in
             let client = resolver.resolve(GitHubClient.self)!

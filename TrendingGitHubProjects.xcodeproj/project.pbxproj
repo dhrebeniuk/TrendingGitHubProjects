@@ -14,7 +14,7 @@
 		D9065CB3212EBB1E00532E76 /* JSONGitRepositoryOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9065CB2212EBB1E00532E76 /* JSONGitRepositoryOwner.swift */; };
 		D99E6B39212F624D00A4BA74 /* TableDataSourceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B38212F624D00A4BA74 /* TableDataSourceAdapter.swift */; };
 		D99E6B3B212F674200A4BA74 /* GitHubTrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B3A212F674200A4BA74 /* GitHubTrendsView.swift */; };
-		D99E6B3D212F678F00A4BA74 /* Assemble.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B3C212F678F00A4BA74 /* Assemble.swift */; };
+		D99E6B3D212F678F00A4BA74 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B3C212F678F00A4BA74 /* Assembly.swift */; };
 		D99E6B3F212F67D400A4BA74 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B3E212F67D400A4BA74 /* ApplicationAssembly.swift */; };
 		D99E6B41212F688700A4BA74 /* GitHubTrendsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B40212F688700A4BA74 /* GitHubTrendsAssembly.swift */; };
 		D99E6B43212F6E2600A4BA74 /* GitHubTrendsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B42212F6E2600A4BA74 /* GitHubTrendsCoordinator.swift */; };
@@ -46,7 +46,7 @@
 		D9065CB2212EBB1E00532E76 /* JSONGitRepositoryOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONGitRepositoryOwner.swift; sourceTree = "<group>"; };
 		D99E6B38212F624D00A4BA74 /* TableDataSourceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSourceAdapter.swift; sourceTree = "<group>"; };
 		D99E6B3A212F674200A4BA74 /* GitHubTrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTrendsView.swift; sourceTree = "<group>"; };
-		D99E6B3C212F678F00A4BA74 /* Assemble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assemble.swift; sourceTree = "<group>"; };
+		D99E6B3C212F678F00A4BA74 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		D99E6B3E212F67D400A4BA74 /* ApplicationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
 		D99E6B40212F688700A4BA74 /* GitHubTrendsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTrendsAssembly.swift; sourceTree = "<group>"; };
 		D99E6B42212F6E2600A4BA74 /* GitHubTrendsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTrendsCoordinator.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				D99E6B38212F624D00A4BA74 /* TableDataSourceAdapter.swift */,
-				D99E6B3C212F678F00A4BA74 /* Assemble.swift */,
+				D99E6B3C212F678F00A4BA74 /* Assembly.swift */,
 				D99E6B44212F6E5E00A4BA74 /* CoordinatorView.swift */,
 				D99E6B5221300D5300A4BA74 /* AvatarImageView.swift */,
 				D99E6B542130105600A4BA74 /* RoundedView.swift */,
@@ -357,7 +357,7 @@
 			files = (
 				D9FB2E30212B70D4009BEB4B /* GitHubTrendsViewController.swift in Sources */,
 				D99E6B4A212F795C00A4BA74 /* JSONGitRepositoriesResult.swift in Sources */,
-				D99E6B3D212F678F00A4BA74 /* Assemble.swift in Sources */,
+				D99E6B3D212F678F00A4BA74 /* Assembly.swift in Sources */,
 				D9065CB1212E2A0900532E76 /* GitHubTrendsViewModel.swift in Sources */,
 				D99E6B59213056E000A4BA74 /* JSONGitReadme.swift in Sources */,
 				D99E6B4C212F7A3C00A4BA74 /* GitHubTrendsCell.swift in Sources */,

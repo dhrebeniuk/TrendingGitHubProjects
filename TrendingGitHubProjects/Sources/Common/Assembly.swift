@@ -1,5 +1,5 @@
 //
-//  Assemble.swift
+//  Assembly.swift
 //  TrendingGitHubProjects
 //
 //  Created by Dmytro Hrebeniuk on 8/24/18.
@@ -8,6 +8,6 @@
 
 import Swinject
 
-protocol Assemble {
-    func assembly(in container:  Swinject.Container)
+protocol Assembly {
+    func assemble(in container:  Swinject.Container)
 }

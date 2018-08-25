@@ -26,7 +26,7 @@ class ApplicationAssembly {
     
     private func registerAssemblies(in container: Swinject.Container) {
         let gitHubTrendsAssemble = GitHubTrendsAssembly()
-        gitHubTrendsAssemble.assembly(in: container)
+        gitHubTrendsAssemble.assemble(in: container)
     }
     
 }
