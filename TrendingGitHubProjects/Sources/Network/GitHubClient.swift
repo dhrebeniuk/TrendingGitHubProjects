@@ -11,8 +11,8 @@ import ReactiveSwift
 import Alamofire
 
 enum GitHubError: Error {
-    case httpError(Int)
-    case jsonFail(Error)
+    case apiError(String)
+    case fail(Error)
 }
 
 class GitHubClient {
@@ -35,18 +35,33 @@ extension GitHubClient {
             Alamofire.request(repositoriesURL, method: .get, parameters: parameters).responseData { response in
                 switch response.result {
                 case .success(let jsonData):
-                    let decoder = JSONDecoder()
-                    do {
-                        let repositoriesResult = try decoder.decode(JSONGitRepositoriesResult.self, from: jsonData)
-                        observer.send(value: repositoriesResult.items)
-                    }
-                    catch {
-                        observer.send(error: GitHubError.jsonFail(error))
-                    }
-                case .failure(_):
                     response.response.map {
-                        observer.send(error: GitHubError.httpError($0.statusCode))
+                        switch $0.statusCode {
+                        case 200...299:
+                            let decoder = JSONDecoder()
+                            do {
+                                let repositoriesResult = try decoder.decode(JSONGitRepositoriesResult.self, from: jsonData)
+                                observer.send(value: repositoriesResult.items)
+                            }
+                            catch {
+                                observer.send(error: GitHubError.fail(error))
+                            }
+                            default:
+                                let decoder = JSONDecoder()
+                                do {
+                                    let errorMessage = try decoder.decode(JSONErrorMessage.self, from: jsonData)
+                                    observer.send(error: GitHubError.apiError(errorMessage.message))
+                                }
+                                catch {
+                                    observer.send(error: GitHubError.fail(error))
+                                }
+                            break
+                        }
                     }
+                    
+                    
+                case .failure(let error):
+                    observer.send(error: GitHubError.fail(error))
                 }
             }
         }
@@ -67,12 +82,10 @@ extension GitHubClient {
                         observer.send(value: repository)
                     }
                     catch {
-                        observer.send(error: GitHubError.jsonFail(error))
+                        observer.send(error: GitHubError.fail(error))
                     }
-                case .failure(_):
-                    response.response.map {
-                        observer.send(error: GitHubError.httpError($0.statusCode))
-                    }
+                case .failure(let error):
+                    observer.send(error: GitHubError.fail(error))
                 }
             }
         }
@@ -86,10 +99,7 @@ extension GitHubClient {
             .appendingPathComponent("readme")
         
         return SignalProducer<JSONGitReadme, GitHubError> { observer, arg  in
-            
-            
-            
-            Alamofire.request(readmeURL, method: .get, parameters: [:], headers: ["X-GitHub-Media-Type": "application/vnd.github.VERSION.html"]).responseData { response in
+            Alamofire.request(readmeURL, method: .get, parameters: [:], headers: ["X-GitHub-Media-Type": "application/vnd.github.v3.raw+json"]).responseData { response in
                 switch response.result {
                 case .success(let jsonData):
                     let decoder = JSONDecoder()
@@ -98,16 +108,14 @@ extension GitHubClient {
                         observer.send(value: readMe)
                     }
                     catch {
-                        observer.send(error: GitHubError.jsonFail(error))
+                        observer.send(error: GitHubError.fail(error))
                     }
-                case .failure(_):
-                    response.response.map {
-                        observer.send(error: GitHubError.httpError($0.statusCode))
-                    }
+                case .failure(let error):
+                    observer.send(error: GitHubError.fail(error))
+
                 }
             }
         }
     }
-    
     
 }

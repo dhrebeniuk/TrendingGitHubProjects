@@ -34,7 +34,12 @@ class GitHubTrendsViewModel {
                 case .value(let resitories):
                     self?.repositories.value = resitories
                 case .failed(let error):
-                    self?.coordinator.show(errorMessage: error.localizedDescription)
+                    switch error {
+                    case .apiError(let errorMessage):
+                        self?.coordinator.show(errorMessage: errorMessage)
+                    case .fail(let error):
+                        self?.coordinator.show(errorMessage: error.localizedDescription)
+                    }
                 default:
                     break
                 }
