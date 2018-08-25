@@ -10,7 +10,7 @@ import UIKit
 import Swinject
 import SwinjectStoryboard
 
-class GitHubTrendsAssemble: Assemble {
+class GitHubTrendsAssembly: Assemble {
 
     func assembly(in container:  Swinject.Container) {
         

@@ -14,13 +14,13 @@ import AlamofireNetworkActivityIndicator
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let applicationAssemble = ApplicationAssemble()
+    let applicationAssembly = ApplicationAssembly()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         NetworkActivityIndicatorManager.shared.isEnabled = true
 
-        applicationAssemble.setup()
-        let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: applicationAssemble.container)
+        applicationAssembly.setup()
+        let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: applicationAssembly.container)
         window?.rootViewController = storyboard.instantiateInitialViewController()
         
         setupNavigatioBarAppearance()

@@ -10,7 +10,7 @@ import UIKit
 import Swinject
 import SwinjectStoryboard
 
-class ApplicationAssemble {
+class ApplicationAssembly {
     
     let container = Container()
 
@@ -25,7 +25,7 @@ class ApplicationAssemble {
     }
     
     private func registerAssemblies(in container: Swinject.Container) {
-        let gitHubTrendsAssemble = GitHubTrendsAssemble()
+        let gitHubTrendsAssemble = GitHubTrendsAssembly()
         gitHubTrendsAssemble.assembly(in: container)
     }
     
