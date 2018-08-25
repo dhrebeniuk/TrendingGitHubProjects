@@ -34,8 +34,6 @@ class GitHubTrendsViewController: UITableViewController {
         
         viewModel.repositories
             .observeValues() { [weak self] repositories in
-                self?.refreshControl?.attributedTitle = nil
-                
                 let dataSourceAdapter = TableDataSourceAdapter<GitHubTrendsCell, JSONGitRepository>(identifier: GitHubTrendsViewController.projectCellIdentifier, objects: repositories) { (cell, repository) in
                     
                     cell.projectNameLabel?.text = repository.name
@@ -74,6 +72,8 @@ extension GitHubTrendsViewController: GitHubTrendsView {
     }
     
     func unblockUI() {
+        refreshControl?.attributedTitle = nil
+
         refreshControl?.endRefreshing()
     }
     
