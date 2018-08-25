@@ -8,19 +8,31 @@
 
 import Foundation
 import ReactiveSwift
+import Result
 
-class GitHubTrendsViewModel {
+protocol GitHubTrendsViewModelProtocol {
+    var repositories: Signal<[JSONGitRepository], NoError> { get }
+
+    func loadRepositories(query: String?)
+    
+    func open(repository: JSONGitRepository)
+}
+
+class GitHubTrendsViewModel: GitHubTrendsViewModelProtocol {
 
     private let client: GitHubClient
     private let coordinator: GitHubTrendsCoordinatorProtocol
     
+    private var repositoriesPipe = Signal<[JSONGitRepository], NoError>.pipe()
+    var repositories: Signal<[JSONGitRepository], NoError> {
+        return repositoriesPipe.output
+    }
+
     init(client: GitHubClient, coordinator: GitHubTrendsCoordinatorProtocol) {
         self.client = client
         self.coordinator = coordinator
     }
     
-    private(set) var repositories = MutableProperty<[JSONGitRepository]>([])
-
     func loadRepositories(query: String? = nil) {
         coordinator.blockUI()
         
@@ -32,7 +44,7 @@ class GitHubTrendsViewModel {
                 self?.coordinator.unblockUI()
                 switch $0 {
                 case .value(let resitories):
-                    self?.repositories.value = resitories
+                    self?.repositoriesPipe.input.send(value: resitories)
                 case .failed(let error):
                     switch error {
                     case .apiError(let errorMessage):

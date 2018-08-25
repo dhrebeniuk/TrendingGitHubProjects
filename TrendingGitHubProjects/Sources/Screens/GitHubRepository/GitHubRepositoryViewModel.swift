@@ -9,8 +9,22 @@
 import Foundation
 import ReactiveSwift
 import Kingfisher
+import Result
 
-class GitHubRepositoryViewModel {
+protocol GitHubRepositoryViewModelProtocol {
+    var projectTitle: Signal<String, NoError> { get }
+    var userName: Signal<String, NoError> { get }
+    var repositoryDescription: Signal<String, NoError> { get }
+    var ownerAvatarResource: Signal<Resource?, NoError> { get }
+    var starsCountString: Signal<String, NoError> { get }
+    var forksCountString: Signal<String, NoError> { get }
+    var readMeName: Signal<String, NoError> { get }
+    var readMeContent: Signal<String?, NoError> { get }
+    
+    func loadRepository()
+}
+
+class GitHubRepositoryViewModel: GitHubRepositoryViewModelProtocol {
     
     private let client: GitHubClient
     private let repositoryId: Int
@@ -20,16 +34,45 @@ class GitHubRepositoryViewModel {
         self.repositoryId = repositoryId
     }
     
-    private(set) var projectTitle = MutableProperty<String>("")
-    private(set) var userName = MutableProperty<String>("")
-    private(set) var repositoryDescription = MutableProperty<String>("")
-    private(set) var ownerAvatarResource = MutableProperty<Resource?>(nil)
-
-    private(set) var starsCountString = MutableProperty<String?>("")
-    private(set) var forksCountString = MutableProperty<String?>("")
+    private var projectTitlePipe = Signal<String, NoError>.pipe()
+    var projectTitle: Signal<String, NoError> {
+        return projectTitlePipe.output
+    }
     
-    private(set) var readMeName = MutableProperty<String>("")
-    private(set) var readMeContent = MutableProperty<String?>(nil)
+    private var userNamePipe = Signal<String, NoError>.pipe()
+    var userName: Signal<String, NoError> {
+        return userNamePipe.output
+    }
+    
+    private var repositoryDescriptionPipe = Signal<String, NoError>.pipe()
+    var repositoryDescription: Signal<String, NoError> {
+        return repositoryDescriptionPipe.output
+    }
+    
+    private var ownerAvatarResourcePipe = Signal<Resource?, NoError>.pipe()
+    var ownerAvatarResource: Signal<Resource?, NoError> {
+        return ownerAvatarResourcePipe.output
+    }
+    
+    private var starsCountStringPipe = Signal<String, NoError>.pipe()
+    var starsCountString: Signal<String, NoError> {
+        return starsCountStringPipe.output
+    }
+    
+    private var forksCountStringPipe = Signal<String, NoError>.pipe()
+    var forksCountString: Signal<String, NoError> {
+        return forksCountStringPipe.output
+    }
+    
+    private var readMeNamePipe = Signal<String, NoError>.pipe()
+    var readMeName: Signal<String, NoError> {
+        return readMeNamePipe.output
+    }
+    
+    private var readMeContentPipe = Signal<String?, NoError>.pipe()
+    var readMeContent: Signal<String?, NoError> {
+        return readMeContentPipe.output
+    }
 
     func loadRepository() {
         client.createRepositoryDetailsSignalProducer(repositoryId: repositoryId)
@@ -37,16 +80,17 @@ class GitHubRepositoryViewModel {
             .start { [weak self] in
                 switch $0 {
                 case .value(let repository):
-                    self?.projectTitle.value = repository.name
-                    self?.userName.value = repository.owner.login
-                    self?.repositoryDescription.value = repository.description ?? ""
-                    self?.ownerAvatarResource.value = repository.owner.avatar_url.flatMap { urlString -> Resource? in
+                    self?.projectTitlePipe.input.send(value: repository.name)
+                    self?.userNamePipe.input.send(value: repository.owner.login)
+                    self?.repositoryDescriptionPipe.input.send(value: repository.description ?? "")
+                    
+                    self?.ownerAvatarResourcePipe.input.send(value: repository.owner.avatar_url.flatMap { urlString -> Resource? in
                         URL(string: urlString)
-                    }
+                    })
                     
-                    self?.starsCountString.value = String(format: NSLocalizedString("%@ Stars", comment: ""), "\(repository.stargazers_count)")
+                    self?.starsCountStringPipe.input.send(value: String(format: NSLocalizedString("%@ Stars", comment: ""), "\(repository.stargazers_count)"))
                     
-                    self?.forksCountString.value = String(format: NSLocalizedString("%@ Forks", comment: ""), "\(repository.forks_count)")
+                    self?.forksCountStringPipe.input.send(value: String(format: NSLocalizedString("%@ Forks", comment: ""), "\(repository.forks_count)"))
                     
                     self?.loadReadMe(ownerName: repository.owner.login, repositoryName: repository.name)
                 case .failed(_):
@@ -63,10 +107,10 @@ class GitHubRepositoryViewModel {
             .start { [weak self] in
                 switch $0 {
                 case .value(let readMe):
-                    self?.readMeName.value = readMe.name
-                    self?.readMeContent.value = Data(base64Encoded: readMe.content, options: .ignoreUnknownCharacters)
+                    self?.readMeNamePipe.input.send(value: readMe.name)
+                    self?.readMeContentPipe.input.send(value: Data(base64Encoded: readMe.content, options: .ignoreUnknownCharacters)
                         .flatMap { String(data: $0, encoding: .utf8) }
-                        .flatMap { $0.strippedHTML }
+                        .flatMap { $0.strippedHTML })
                 case .failed(_):
                     break
                 default:

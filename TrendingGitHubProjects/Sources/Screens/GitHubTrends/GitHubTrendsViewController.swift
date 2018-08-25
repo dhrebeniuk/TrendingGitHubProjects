@@ -13,7 +13,7 @@ import Result
 
 class GitHubTrendsViewController: UITableViewController {
 
-    var viewModel: GitHubTrendsViewModel!
+    var viewModel: GitHubTrendsViewModelProtocol!
     
     private static let projectCellIdentifier = "projectCellIdentifier"
         
@@ -32,8 +32,8 @@ class GitHubTrendsViewController: UITableViewController {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        viewModel.repositories.producer
-            .startWithValues() { [weak self] repositories in
+        viewModel.repositories
+            .observeValues() { [weak self] repositories in
                 self?.refreshControl?.attributedTitle = nil
                 
                 let dataSourceAdapter = TableDataSourceAdapter<GitHubTrendsCell, JSONGitRepository>(identifier: GitHubTrendsViewController.projectCellIdentifier, objects: repositories) { (cell, repository) in
@@ -47,7 +47,7 @@ class GitHubTrendsViewController: UITableViewController {
                 self?.tableView.reloadData()
             }
         
-        viewModel.loadRepositories()
+        viewModel.loadRepositories(query: nil)
         
         searchResultsController?.searchBar.reactive.continuousTextValues.observeValues() { [weak self] in
             self?.viewModel.loadRepositories(query: $0)

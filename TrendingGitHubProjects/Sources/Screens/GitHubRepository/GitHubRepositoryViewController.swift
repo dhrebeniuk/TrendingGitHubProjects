@@ -13,7 +13,7 @@ import Kingfisher
 
 class GitHubRepositoryViewController: UIViewController {
 
-    var viewModel: GitHubRepositoryViewModel!
+    var viewModel: GitHubRepositoryViewModelProtocol!
     
     @IBOutlet weak var avatarImageView: UIImageView?
     @IBOutlet weak var userNameLabel: UILabel?

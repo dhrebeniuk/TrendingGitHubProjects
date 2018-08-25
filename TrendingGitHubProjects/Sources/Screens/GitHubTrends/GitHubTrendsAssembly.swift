@@ -14,7 +14,7 @@ class GitHubTrendsAssembly: Assembly {
 
     func assemble(in container:  Swinject.Container) {
         
-        container.register(GitHubTrendsViewModel.self) { resolver in
+        container.register(GitHubTrendsViewModelProtocol.self) { resolver in
             let client = resolver.resolve(GitHubClient.self)!
             let coordinator = resolver.resolve(GitHubTrendsCoordinator.self)!
             let viewModel = GitHubTrendsViewModel(client: client, coordinator: coordinator)
@@ -29,7 +29,7 @@ class GitHubTrendsAssembly: Assembly {
             let coordinator = resolver.resolve(GitHubTrendsCoordinator.self)!
             coordinator.view = controller
 
-            let viewModel = resolver.resolve(GitHubTrendsViewModel.self)!
+            let viewModel = resolver.resolve(GitHubTrendsViewModelProtocol.self)!
             controller.viewModel = viewModel
         }
         
