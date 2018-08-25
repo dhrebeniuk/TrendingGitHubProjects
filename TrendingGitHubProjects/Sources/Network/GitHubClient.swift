@@ -63,6 +63,8 @@ extension GitHubClient {
                 case .failure(let error):
                     observer.send(error: GitHubError.fail(error))
                 }
+                
+                observer.sendCompleted()
             }
         }
     }
@@ -87,6 +89,7 @@ extension GitHubClient {
                 case .failure(let error):
                     observer.send(error: GitHubError.fail(error))
                 }
+                observer.sendCompleted()
             }
         }
     }
@@ -112,8 +115,9 @@ extension GitHubClient {
                     }
                 case .failure(let error):
                     observer.send(error: GitHubError.fail(error))
-
                 }
+                
+                observer.sendCompleted()
             }
         }
     }

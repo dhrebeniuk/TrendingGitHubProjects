@@ -45,7 +45,7 @@ class GitHubTrendsViewController: UITableViewController {
                 self?.dataSourceAdapter = dataSourceAdapter
                 self?.tableView.dataSource = dataSourceAdapter
                 self?.tableView.reloadData()
-        }
+            }
         
         viewModel.loadRepositories()
         
