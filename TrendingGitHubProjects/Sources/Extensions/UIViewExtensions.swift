@@ -1,5 +1,5 @@
 //
-//  RoundedView.swift
+//  UIViewExtensions.swift
 //  TrendingGitHubProjects
 //
 //  Created by Dmytro Hrebeniuk on 8/24/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoundedView: UIView {
+extension UIView {
 
     @IBInspectable open var corderRadius: CGFloat {
         get {

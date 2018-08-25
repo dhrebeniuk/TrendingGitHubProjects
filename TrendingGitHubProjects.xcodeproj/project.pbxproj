@@ -27,8 +27,7 @@
 		D99E6B4C212F7A3C00A4BA74 /* GitHubTrendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B4B212F7A3C00A4BA74 /* GitHubTrendsCell.swift */; };
 		D99E6B4F2130032300A4BA74 /* GitHubRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B4E2130032200A4BA74 /* GitHubRepositoryViewController.swift */; };
 		D99E6B512130066C00A4BA74 /* GitHubRepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B502130066C00A4BA74 /* GitHubRepositoryViewModel.swift */; };
-		D99E6B5321300D5300A4BA74 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B5221300D5300A4BA74 /* AvatarImageView.swift */; };
-		D99E6B552130105600A4BA74 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B542130105600A4BA74 /* RoundedView.swift */; };
+		D99E6B552130105600A4BA74 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B542130105600A4BA74 /* UIViewExtensions.swift */; };
 		D99E6B5721301B5500A4BA74 /* KingfisherReactiveExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B5621301B5500A4BA74 /* KingfisherReactiveExtensions.swift */; };
 		D99E6B59213056E000A4BA74 /* JSONGitReadme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B58213056E000A4BA74 /* JSONGitReadme.swift */; };
 		D99E6B5D21308AF000A4BA74 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E6B5C21308AF000A4BA74 /* StringExtensions.swift */; };
@@ -62,8 +61,7 @@
 		D99E6B4B212F7A3C00A4BA74 /* GitHubTrendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTrendsCell.swift; sourceTree = "<group>"; };
 		D99E6B4E2130032200A4BA74 /* GitHubRepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryViewController.swift; sourceTree = "<group>"; };
 		D99E6B502130066C00A4BA74 /* GitHubRepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryViewModel.swift; sourceTree = "<group>"; };
-		D99E6B5221300D5300A4BA74 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
-		D99E6B542130105600A4BA74 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		D99E6B542130105600A4BA74 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		D99E6B5621301B5500A4BA74 /* KingfisherReactiveExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherReactiveExtensions.swift; sourceTree = "<group>"; };
 		D99E6B58213056E000A4BA74 /* JSONGitReadme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONGitReadme.swift; sourceTree = "<group>"; };
 		D99E6B5C21308AF000A4BA74 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -125,8 +123,6 @@
 				D99E6B38212F624D00A4BA74 /* TableDataSourceAdapter.swift */,
 				D99E6B3C212F678F00A4BA74 /* Assembly.swift */,
 				D99E6B44212F6E5E00A4BA74 /* CoordinatorView.swift */,
-				D99E6B5221300D5300A4BA74 /* AvatarImageView.swift */,
-				D99E6B542130105600A4BA74 /* RoundedView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -134,6 +130,7 @@
 		D99E6B46212F732E00A4BA74 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D99E6B542130105600A4BA74 /* UIViewExtensions.swift */,
 				D99E6B47212F733D00A4BA74 /* UIViewControllerExtensions.swift */,
 				D99E6B5621301B5500A4BA74 /* KingfisherReactiveExtensions.swift */,
 				D99E6B5C21308AF000A4BA74 /* StringExtensions.swift */,
@@ -373,8 +370,7 @@
 				D99E6B3F212F67D400A4BA74 /* ApplicationAssembly.swift in Sources */,
 				D9FB2E18212B695F009BEB4B /* AppDelegate.swift in Sources */,
 				D9065CB3212EBB1E00532E76 /* JSONGitRepositoryOwner.swift in Sources */,
-				D99E6B552130105600A4BA74 /* RoundedView.swift in Sources */,
-				D99E6B5321300D5300A4BA74 /* AvatarImageView.swift in Sources */,
+				D99E6B552130105600A4BA74 /* UIViewExtensions.swift in Sources */,
 				D99E6B4F2130032300A4BA74 /* GitHubRepositoryViewController.swift in Sources */,
 				D99E6B5D21308AF000A4BA74 /* StringExtensions.swift in Sources */,
 				D99E6B512130066C00A4BA74 /* GitHubRepositoryViewModel.swift in Sources */,
